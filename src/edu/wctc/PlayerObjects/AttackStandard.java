@@ -1,12 +1,20 @@
 package edu.wctc.PlayerObjects;
 
-public class AttackStandard implements AttackBehaviour{
+import edu.wctc.BehaviourObjects.AttackBehaviour;
+import edu.wctc.BehaviourObjects.AttackValueBroker;
 
-    int attackValue = 10;
+public class AttackStandard implements AttackBehaviour {
+
+    int attackValue;
+
+    public AttackStandard(AttackValueBroker attackTable) {
+
+        attackValue = attackTable.attackValues.get("Standard Attack - Player");
+
+    }
 
     @Override
     public int attack() {
-        //Standard Attack deals 10 Damage
         return attackValue;
     }
 

@@ -1,8 +1,17 @@
 package edu.wctc.PlayerObjects;
 
-public class AttackLight implements AttackBehaviour{
+import edu.wctc.BehaviourObjects.AttackBehaviour;
+import edu.wctc.BehaviourObjects.AttackValueBroker;
 
-    int attackValue = 5;
+public class AttackLight implements AttackBehaviour {
+
+    int attackValue;
+
+    public AttackLight(AttackValueBroker attackTable) {
+
+        attackValue = attackTable.attackValues.get("Light Attack - Player");
+
+    }
 
     @Override
     public int attack() {

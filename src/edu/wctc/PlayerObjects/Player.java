@@ -1,27 +1,38 @@
 package edu.wctc.PlayerObjects;
 
+import edu.wctc.BehaviourObjects.AttackBehaviour;
+import edu.wctc.BehaviourObjects.PlayerHealthBehaviour;
+import edu.wctc.BehaviourObjects.DamageBehaviour;
+import edu.wctc.DamageCalculation;
+
 public abstract class Player {
 
     protected AttackBehaviour attackBehaviour;
-    protected HealthBehaviour healthBehaviour;
+    protected PlayerHealthBehaviour healthBehaviour;
+    protected DamageBehaviour damageBehaviour;
     protected String playerName;
+    protected int playerScore;
 
+    //Base Constructor
     public Player() {
-
+        this.damageBehaviour = new DamageCalculation();
     }
 
+    //Returns the current health value
     public int getHealth() {
 
         return healthBehaviour.healthValue();
 
     }
 
+    //Returns the current armor value
     public int getArmor() {
 
         return healthBehaviour.armorValue();
 
     }
 
+    //Returns the current attack value
     public int getAttackValue() {
 
         return attackBehaviour.attack();
@@ -31,50 +42,28 @@ public abstract class Player {
     //Kinda hacky way to have the player gain Armor
     public void gainArmor(int armorAmount) {
 
-        healthBehaviour.gainArmor(armorAmount);
+        healthBehaviour.gainArmor();
 
     }
 
-    //Extremely hacky way to make the player take damage from an attack
-    public void takeDamage(int incomingDamage) {
+    //Adds score value from felled enemies to players score value
+    public void addToScore(int scoreValue) {
 
-        int remainingDamage = incomingDamage;
+        playerScore += scoreValue;
 
-        /*
-        We need to do damage calculation now. Hoo boy.
-        I don't want the Armor value to go below 0, so I came up with this.
-        Extremely tricky nested if/for loops, absolutely horrific I bet.
-        For each point of incoming damage, it's first decremented from the active Armor count,
-        Then any overflow is decremented from the Health count.
-        It took a while to get working properly, but it does now so I'll take it
-         */
-        if (healthBehaviour.armorValue() > 0) {
+    }
 
-            //First we damage the armor as much as we can
-            for (int i = incomingDamage; i > 0 && healthBehaviour.armorValue() > 0; i--) {
-                healthBehaviour.armorDamage();
-                //We need to also keep count of how much damage'll be left to inflict after we're done with the armor
-                remainingDamage--;
+    //Damage Calculation
+    public void takeDamage(int incomingDamage, PlayerHealthBehaviour healthBehaviour) {
 
-                System.out.println("TEST INFO - ARMOR DAMAGE TAKEN");
-                System.out.println(healthBehaviour.armorValue());
-                System.out.println("DAMAGE LEFT IS " + i);
-                if (healthBehaviour.armorValue() == 0) {
+        //System.out.println(incomingDamage);
+        damageBehaviour.takeDamage(incomingDamage, healthBehaviour);
 
-                    for (i = remainingDamage; i > 0 && healthBehaviour.healthValue() > 0; i--) {
-                        healthBehaviour.healthDamage();
+    }
 
-                        System.out.println("TEST INFO - HEALTH DAMAGE TAKEN");
-                        System.out.println(healthBehaviour.healthValue());
-                        System.out.println("DAMAGE LEFT IS " + i);
-                    }
-
-                }
-
-            }
-
-        }
-
+    //Returns the Entity's Health Values
+    public PlayerHealthBehaviour getHealthBehaviour() {
+        return healthBehaviour;
     }
 
 }

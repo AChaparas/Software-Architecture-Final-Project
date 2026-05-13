@@ -1,9 +1,12 @@
 package edu.wctc.PlayerObjects;
 
-public class HealthLight implements HealthBehaviour {
+import edu.wctc.BehaviourObjects.PlayerHealthBehaviour;
+
+public class HealthLight implements PlayerHealthBehaviour {
 
     int healthValue = 35;
     int armorValue = 0;
+    int armorAmount = 10;
 
     @Override
     public int healthValue() {
@@ -26,7 +29,7 @@ public class HealthLight implements HealthBehaviour {
     }
 
     @Override
-    public void gainArmor(int armorAmount) {
+    public void gainArmor() {
         armorValue += armorAmount;
     }
 

@@ -1,4 +1,4 @@
-package edu.wctc.PlayerObjects;
+package edu.wctc.BehaviourObjects;
 
 public interface AttackBehaviour {
 

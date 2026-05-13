@@ -1,5 +1,7 @@
 package edu.wctc;
 
+import edu.wctc.BehaviourObjects.AttackValueBroker;
+import edu.wctc.IOObjects.IOHandler;
 import edu.wctc.PlayerObjects.CharacterCreator;
 import edu.wctc.PlayerObjects.Player;
 
@@ -50,7 +52,7 @@ public class GameCore {
             do {
 
                 //Time to dump you in the Character Creator for a bit
-                Player playerCharacter = CharacterCreator.characterCreator(ioHandler);
+                Player playerCharacter = CharacterCreator.characterCreator(ioHandler, AttackValueBroker.getInstance());
                 //This took a while to complete, but finally, you're ready to go
 
                 //==================================================
@@ -58,7 +60,12 @@ public class GameCore {
                 //They are, that took a lil while
                 playerCharacter.gainArmor(20);
 
-                playerCharacter.takeDamage(999);
+                playerCharacter.takeDamage(999, playerCharacter.getHealthBehaviour());
+
+                if (playerCharacter.getHealth() == 0) {
+                    System.out.println("TEST INFO - CHARACTER IS DEAD");
+                    playerAlive = false;
+                }
                 //==================================================
 
 

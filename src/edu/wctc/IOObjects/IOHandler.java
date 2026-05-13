@@ -1,4 +1,4 @@
-package edu.wctc;
+package edu.wctc.IOObjects;
 
 public interface IOHandler {
 

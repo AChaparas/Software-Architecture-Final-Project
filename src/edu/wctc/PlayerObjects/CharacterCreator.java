@@ -1,10 +1,11 @@
 package edu.wctc.PlayerObjects;
 
-import edu.wctc.IOHandler;
+import edu.wctc.BehaviourObjects.AttackValueBroker;
+import edu.wctc.IOObjects.IOHandler;
 
 public class CharacterCreator {
 
-    public static Player characterCreator(IOHandler ioHandler) {
+    public static Player characterCreator(IOHandler ioHandler, AttackValueBroker attackTable) {
 
         String playerName = creatorIntro(ioHandler);
         char classChoicer;
@@ -24,7 +25,7 @@ public class CharacterCreator {
 
         ioHandler.outputText("Generating your character...");
 
-        return PlayerFactory.getPlayer(classChoicer, playerName);
+        return PlayerFactory.getPlayer(classChoicer, playerName, attackTable);
 
     }
 

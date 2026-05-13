@@ -1,12 +1,20 @@
 package edu.wctc.PlayerObjects;
 
-public class AttackHeavy implements AttackBehaviour{
+import edu.wctc.BehaviourObjects.AttackBehaviour;
+import edu.wctc.BehaviourObjects.AttackValueBroker;
 
-    int attackValue = 15;
+public class AttackHeavy implements AttackBehaviour {
+
+    int attackValue;
+
+    public AttackHeavy(AttackValueBroker attackTable) {
+
+        attackValue = attackTable.attackValues.get("Strong Attack - Player");
+
+    }
 
     @Override
     public int attack() {
-        //Heavy Attack deals 15 Damage
         return attackValue;
     }
 
