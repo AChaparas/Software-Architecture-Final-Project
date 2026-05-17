@@ -1,6 +1,8 @@
 package edu.wctc;
 
 import edu.wctc.BehaviourObjects.AttackValueBroker;
+import edu.wctc.EnemyObjects.Enemy;
+import edu.wctc.EnemyObjects.EnemyFactory;
 import edu.wctc.IOObjects.IOHandler;
 import edu.wctc.PlayerObjects.CharacterCreator;
 import edu.wctc.PlayerObjects.Player;
@@ -29,45 +31,56 @@ public class GameCore {
         //Ya see, this gives me a good excuse for what to use a Factory for. Gotta make enemies somehow!
             //For later though. For not let's get a base set up here.
 
-        do {
 
-            playerCharChoiceValue = gameIntro(ioHandler);
+
+        playerCharChoiceValue = gameIntro(ioHandler);
 //            ioHandler.outputText(String.valueOf(playerCharChoiceValue));
-            if (playerCharChoiceValue != 'Y' && playerCharChoiceValue != 'N') {
+        if (playerCharChoiceValue != 'Y' && playerCharChoiceValue != 'N') {
 
-                do {
+            do {
 
-                    playerCharChoiceValue = gameIntroFail(ioHandler);
+                playerCharChoiceValue = gameIntroFail(ioHandler);
 
-                } while (playerCharChoiceValue != 'Y' && playerCharChoiceValue != 'N');
+            } while (playerCharChoiceValue != 'Y' && playerCharChoiceValue != 'N');
 
-            }
+        }
 
-        } while (playerCharChoiceValue != 'Y' && playerCharChoiceValue != 'N');
+
 
         if (playerCharChoiceValue == 'Y') {
+
+            //Time to dump you in the Character Creator for a bit
+            Player playerCharacter = CharacterCreator.characterCreator(ioHandler, AttackValueBroker.getInstance());
+            //This took a while to complete, but finally, you're ready to go
 
             //Player is ready, start main gameplay
             //Gotta lock the player into the eternal do loop of Doom
             do {
 
-                //Time to dump you in the Character Creator for a bit
-                Player playerCharacter = CharacterCreator.characterCreator(ioHandler, AttackValueBroker.getInstance());
-                //This took a while to complete, but finally, you're ready to go
-
                 //==================================================
                 //Test Values to make sure armor and damage systems are working
                 //They are, that took a lil while
-                playerCharacter.gainArmor(20);
-
-                playerCharacter.takeDamage(999, playerCharacter.getHealthBehaviour());
-
-                if (playerCharacter.getHealth() == 0) {
-                    System.out.println("TEST INFO - CHARACTER IS DEAD");
-                    playerAlive = false;
-                }
+//                playerCharacter.gainArmor(playerCharacter.getArmor());
+//
+//                playerCharacter.takeDamage(playerCharacter.getAttackValue(), playerCharacter.getHealthBehaviour());
+//
+//                Enemy testEnemy = EnemyFactory.getEnemy('W', AttackValueBroker.getInstance());
+//
+//                testEnemy.enemyTakeDamage(playerCharacter.getAttackValue(), testEnemy.getHealthBehaviour());
+//
+//                if (playerCharacter.getHealth() == 0) {
+//                    System.out.println("TEST INFO - CHARACTER IS DEAD");
+//                    playerAlive = false;
+//                }
                 //==================================================
 
+                //Functionality is now fully implemented
+                //Finally is the Combat Loop
+
+
+
+
+                //==================================================
 
             } while (playerAlive); //This should check if a Player object has more than Zero health.
             //If it gets past this point, you're dead

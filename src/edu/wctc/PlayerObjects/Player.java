@@ -3,7 +3,7 @@ package edu.wctc.PlayerObjects;
 import edu.wctc.BehaviourObjects.AttackBehaviour;
 import edu.wctc.BehaviourObjects.PlayerHealthBehaviour;
 import edu.wctc.BehaviourObjects.DamageBehaviour;
-import edu.wctc.DamageCalculation;
+import edu.wctc.BehaviourObjects.DamageCalculation;
 
 public abstract class Player {
 
@@ -56,7 +56,7 @@ public abstract class Player {
     //Damage Calculation
     public void takeDamage(int incomingDamage, PlayerHealthBehaviour healthBehaviour) {
 
-        //System.out.println(incomingDamage);
+        System.out.println(incomingDamage);
         damageBehaviour.takeDamage(incomingDamage, healthBehaviour);
 
     }

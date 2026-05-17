@@ -2,7 +2,7 @@ package edu.wctc.EnemyObjects;
 
 import edu.wctc.BehaviourObjects.DamageBehaviour;
 import edu.wctc.BehaviourObjects.EnemyHealthBehaviour;
-import edu.wctc.DamageCalculation;
+import edu.wctc.BehaviourObjects.DamageCalculation;
 import edu.wctc.BehaviourObjects.AttackBehaviour;
 
 public abstract class Enemy {
@@ -39,7 +39,7 @@ public abstract class Enemy {
 
     }
 
-    //Returns the Entity's Health Values
+    //Returns the Entity's Health Behaviour
     public EnemyHealthBehaviour getHealthBehaviour() {
         return healthBehaviour;
     }

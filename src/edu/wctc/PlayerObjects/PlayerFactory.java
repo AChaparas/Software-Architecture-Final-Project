@@ -7,6 +7,7 @@ public class PlayerFactory {
     public static Player getPlayer(char classChoice, String playerName, AttackValueBroker attackTable) {
 
         switch (classChoice) {
+
             case 'S':
                 return new StrongPlayer(playerName, attackTable);
             case 'B':
@@ -15,6 +16,7 @@ public class PlayerFactory {
                 return new QuickPlayer(playerName, attackTable);
             default:
                 return new BasePlayer(playerName, attackTable);
+
         }
 
     }

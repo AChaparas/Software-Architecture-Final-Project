@@ -2,9 +2,9 @@ package edu.wctc.EnemyObjects;
 
 import edu.wctc.BehaviourObjects.EnemyHealthBehaviour;
 
-public class EnemyHealthFrail implements EnemyHealthBehaviour {
+public class EnemyHealthStandard implements EnemyHealthBehaviour {
 
-    int healthValue = 8;
+    int healthValue = 16;
 
     @Override
     public int healthValue() {

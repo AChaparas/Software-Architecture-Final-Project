@@ -1,8 +1,4 @@
-package edu.wctc;
-
-import edu.wctc.BehaviourObjects.DamageBehaviour;
-import edu.wctc.BehaviourObjects.EnemyHealthBehaviour;
-import edu.wctc.BehaviourObjects.PlayerHealthBehaviour;
+package edu.wctc.BehaviourObjects;
 
 public class DamageCalculation implements DamageBehaviour {
 
@@ -29,7 +25,7 @@ public class DamageCalculation implements DamageBehaviour {
                 remainingDamage--;
 
                 //Test Values
-//                System.out.println("TEST INFO - ARMOR DAMAGE TAKEN");
+//                System.out.println("TEST INFO - PLAYER ARMOR DAMAGE TAKEN");
 //                System.out.println(healthBehaviour.armorValue());
 //                System.out.println("DAMAGE LEFT IS " + i);
                 if (healthBehaviour.armorValue() == 0) {
@@ -38,7 +34,7 @@ public class DamageCalculation implements DamageBehaviour {
                         healthBehaviour.healthDamage();
 
                         //Test Values
-//                        System.out.println("TEST INFO - HEALTH DAMAGE TAKEN");
+//                        System.out.println("TEST INFO - PLAYER HEALTH DAMAGE TAKEN");
 //                        System.out.println(healthBehaviour.healthValue());
 //                        System.out.println("DAMAGE LEFT IS " + i);
                     }
@@ -54,15 +50,17 @@ public class DamageCalculation implements DamageBehaviour {
     @Override
     public void enemyTakeDamage(int incomingDamage, EnemyHealthBehaviour healthBehaviour) {
 
+        //Enemies don't get Armor because if they could choose to add armor, it'd likely end up a stalemate forever
+        //So for simplicity they just can't.
         if (healthBehaviour.healthValue() > 0) {
 
             for (int i = incomingDamage; i > 0 && healthBehaviour.healthValue() > 0; i--) {
                 healthBehaviour.healthDamage();
 
                 //Test Values
-//                        System.out.println("TEST INFO - HEALTH DAMAGE TAKEN");
-//                        System.out.println(healthBehaviour.healthValue());
-//                        System.out.println("DAMAGE LEFT IS " + i);
+//                System.out.println("TEST INFO - ENEMY HEALTH DAMAGE TAKEN");
+//                System.out.println(healthBehaviour.healthValue());
+//                System.out.println("DAMAGE LEFT IS " + i);
             }
 
         }

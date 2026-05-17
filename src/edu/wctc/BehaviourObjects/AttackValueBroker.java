@@ -9,6 +9,7 @@ public class AttackValueBroker {
     public HashMap<String, Integer> attackValues = new HashMap<>();
     private static AttackValueBroker instance = new AttackValueBroker();
 
+    //Stick another Singleton in this because I want exactly one copy of this list, we're not makin duplicates
     private AttackValueBroker() {
         fillAttackValueList();
         instance = this;
