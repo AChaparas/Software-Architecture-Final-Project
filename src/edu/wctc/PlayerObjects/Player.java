@@ -53,10 +53,21 @@ public abstract class Player {
 
     }
 
+    public int getScore() {
+
+        return playerScore;
+
+    }
+
+    public String getPlayerName() {
+
+        return playerName;
+
+    }
+
     //Damage Calculation
     public void takeDamage(int incomingDamage, PlayerHealthBehaviour healthBehaviour) {
 
-        System.out.println(incomingDamage);
         damageBehaviour.takeDamage(incomingDamage, healthBehaviour);
 
     }

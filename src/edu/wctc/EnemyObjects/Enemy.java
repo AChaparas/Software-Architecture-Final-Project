@@ -31,6 +31,18 @@ public abstract class Enemy {
 
     }
 
+    public String getEnemyName() {
+
+        return enemyName;
+
+    }
+
+    public int getScoreValue() {
+
+        return scoreValue;
+
+    }
+
     //Damage Calculation
     public void enemyTakeDamage(int incomingDamage, EnemyHealthBehaviour healthBehaviour) {
 

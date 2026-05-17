@@ -1,6 +1,6 @@
 package edu.wctc;
 
-import edu.wctc.BehaviourObjects.AttackValueBroker;
+import edu.wctc.GameObjects.GameCore;
 import edu.wctc.IOObjects.IOConsole;
 
 public class Main {

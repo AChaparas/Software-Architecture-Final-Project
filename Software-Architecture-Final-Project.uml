@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/alexc/OneDrive/Documents/College Stuff/Intro to Java/Software-Architecture-Final-Project</OriginalElement>
+  <nodes>
+    <node x="261.5" y="1391.584777142857">edu.wctc.PlayerObjects.HealthLight</node>
+    <node x="713.8873164976959" y="1163.5">edu.wctc.BehaviourObjects.EnemyHealthBehaviour</node>
+    <node x="45.6974606451613" y="1391.584777142857">edu.wctc.PlayerObjects.HealthStandard</node>
+    <node x="570.0423885714288" y="2371.568512442398">edu.wctc.EnemyObjects.EnemyAttackWeak</node>
+    <node x="291.04238857142866" y="1674.1533640552998">edu.wctc.EnemyObjects.Enemy</node>
+    <node x="-839.2455911520733" y="876.1885714285719">edu.wctc.IOObjects.IOHandler</node>
+    <node x="1102.691889400921" y="1121.5">edu.wctc.BehaviourObjects.DamageCalculation</node>
+    <node x="142.04238857142877" y="2371.568512442398">edu.wctc.PlayerObjects.AttackLight</node>
+    <node x="772.8942930875576" y="1893.1533640552998">edu.wctc.EnemyObjects.StrongEnemy</node>
+    <node x="303.04238857142855" y="370.73277345622114">edu.wctc.PlayerObjects.PlayerFactory</node>
+    <node x="752.2013292165898" y="767.5">edu.wctc.PlayerObjects.StrongPlayer</node>
+    <node x="-413.3555922580646" y="829.9181448847927">edu.wctc.Main</node>
+    <node x="-170.1050787096774" y="1391.584777142857">edu.wctc.PlayerObjects.HealthLarge</node>
+    <node x="490.6492527188942" y="1391.584777142857">edu.wctc.EnemyObjects.EnemyHealthLarge</node>
+    <node x="755.7013292165898" y="500.50000000000006">edu.wctc.PlayerObjects.QuickPlayer</node>
+    <node x="315.54238857142855" y="500.5">edu.wctc.PlayerObjects.Player</node>
+    <node x="391.0423885714288" y="2194.0211281106">edu.wctc.BehaviourObjects.AttackBehaviour</node>
+    <node x="771.8942930875576" y="1674.1533640552998">edu.wctc.EnemyObjects.WeakEnemy</node>
+    <node x="284.54238857142855" y="179.5036534562222">edu.wctc.PlayerObjects.CharacterCreator</node>
+    <node x="-492.3555922580646" y="1205.2490204608293">edu.wctc.GameObjects.CombatCore</node>
+    <node x="25.6974606451613" y="632.6978801843316">edu.wctc.BehaviourObjects.ScoreValueBroker</node>
+    <node x="772.8942930875576" y="1783.6533640552998">edu.wctc.EnemyObjects.BasicEnemy</node>
+    <node x="21.1974606451613" y="1163.5">edu.wctc.BehaviourObjects.PlayerHealthBehaviour</node>
+    <node x="969.1253802764977" y="1391.584777142857">edu.wctc.EnemyObjects.EnemyHealthFrail</node>
+    <node x="758.2013292165898" y="634.0">edu.wctc.PlayerObjects.BasePlayer</node>
+    <node x="-186.51840036866298" y="2371.568512442398">edu.wctc.PlayerObjects.AttackStandard</node>
+    <node x="267.0423885714288" y="2004.7755391705068">edu.wctc.EnemyObjects.EnemyFactory</node>
+    <node x="716.3873164976959" y="1391.584777142857">edu.wctc.EnemyObjects.EnemyHealthStandard</node>
+    <node x="-448.8555922580646" y="981.583582672811">edu.wctc.GameObjects.GameCore</node>
+    <node x="928.3995834101383" y="2371.568512442398">edu.wctc.EnemyObjects.EnemyAttackNormal</node>
+    <node x="-498.07918930875474" y="2371.568512442398">edu.wctc.PlayerObjects.AttackHeavy</node>
+    <node x="23.6974606451613" y="804.9181448847927">edu.wctc.BehaviourObjects.AttackValueBroker</node>
+    <node x="-834.7455911520733" y="1391.584777142857">edu.wctc.IOObjects.ConsoleInputFacade</node>
+    <node x="391.0423885714286" y="899.2124718894008">edu.wctc.BehaviourObjects.HealthBehaviour</node>
+    <node x="-839.2455911520733" y="1108.8866742857144">edu.wctc.IOObjects.IOConsole</node>
+    <node x="1102.691889400921" y="953.5">edu.wctc.BehaviourObjects.DamageBehaviour</node>
+    <node x="1296.756778248848" y="2371.568512442398">edu.wctc.EnemyObjects.EnemyAttackStrong</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.wctc.PlayerObjects.BasePlayer" target="edu.wctc.PlayerObjects.Player" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="903.7013292165898" y="665.5" />
+      <point x="480.54238857142855" y="665.5" />
+      <point x="0.0" y="165.0" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyHealthStandard" target="edu.wctc.BehaviourObjects.EnemyHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-56.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.HealthLight" target="edu.wctc.BehaviourObjects.PlayerHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-92.0" />
+      <point x="350.0" y="1370.75" />
+      <point x="134.1974606451613" y="1370.75" />
+      <point x="0.0" y="55.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyAttackNormal" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="1080.3995834101383" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyAttackStrong" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="1447.756778248848" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.QuickPlayer" target="edu.wctc.PlayerObjects.Player" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="903.7013292165898" y="532.0" />
+      <point x="700.6218588940092" y="532.0" />
+      <point x="700.6218588940092" y="665.5" />
+      <point x="480.54238857142855" y="665.5" />
+      <point x="0.0" y="165.0" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.AttackLight" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="266.5423885714288" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyAttackWeak" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="717.0423885714288" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyHealthFrail" target="edu.wctc.BehaviourObjects.EnemyHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-56.0" />
+      <point x="1062.6253802764977" y="1370.75" />
+      <point x="828.3873164976959" y="1370.75" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.AttackHeavy" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="-369.57918930875474" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.AttackStandard" target="edu.wctc.BehaviourObjects.AttackBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-44.0" />
+      <point x="-49.51840036866298" y="2312.806540092167" />
+      <point x="480.5423885714288" y="2312.806540092167" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="edu.wctc.BehaviourObjects.DamageCalculation" target="edu.wctc.BehaviourObjects.DamageBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-56.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.BasicEnemy" target="edu.wctc.EnemyObjects.Enemy" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="981.3942930875576" y="1815.1533640552998" />
+      <point x="480.54238857142866" y="1815.1533640552998" />
+      <point x="0.0" y="141.0" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.StrongEnemy" target="edu.wctc.EnemyObjects.Enemy" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="986.3942930875576" y="1924.6533640552998" />
+      <point x="721.4683408294932" y="1924.6533640552998" />
+      <point x="721.4683408294932" y="1815.1533640552998" />
+      <point x="480.54238857142866" y="1815.1533640552998" />
+      <point x="0.0" y="141.0" />
+    </edge>
+    <edge source="edu.wctc.BehaviourObjects.PlayerHealthBehaviour" target="edu.wctc.BehaviourObjects.HealthBehaviour" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-55.5" />
+      <point x="134.1974606451613" y="1113.0" />
+      <point x="480.5423885714286" y="1113.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="edu.wctc.IOObjects.IOConsole" target="edu.wctc.IOObjects.IOHandler" relationship="REALIZATION">
+      <point x="0.0" y="-117.0" />
+      <point x="-719.7455911520733" y="1163.4101308755767" />
+      <point x="-719.7455911520733" y="1163.4101308755767" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.WeakEnemy" target="edu.wctc.EnemyObjects.Enemy" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="981.3942930875576" y="1689.9033640552998" />
+      <point x="721.4683408294932" y="1689.9033640552998" />
+      <point x="721.4683408294932" y="1815.1533640552998" />
+      <point x="480.54238857142866" y="1815.1533640552998" />
+      <point x="0.0" y="141.0" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.HealthLarge" target="edu.wctc.BehaviourObjects.PlayerHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-92.0" />
+      <point x="-81.6050787096774" y="1370.75" />
+      <point x="134.1974606451613" y="1370.75" />
+      <point x="0.0" y="55.5" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.StrongPlayer" target="edu.wctc.PlayerObjects.Player" relationship="GENERALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="903.7013292165898" y="799.0" />
+      <point x="700.6218588940092" y="799.0" />
+      <point x="700.6218588940092" y="665.5" />
+      <point x="480.54238857142855" y="665.5" />
+      <point x="0.0" y="165.0" />
+    </edge>
+    <edge source="edu.wctc.BehaviourObjects.EnemyHealthBehaviour" target="edu.wctc.BehaviourObjects.HealthBehaviour" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="828.3873164976959" y="1112.75" />
+      <point x="480.5423885714286" y="1112.75" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="edu.wctc.EnemyObjects.EnemyHealthLarge" target="edu.wctc.BehaviourObjects.EnemyHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-56.0" />
+      <point x="589.1492527188942" y="1370.75" />
+      <point x="828.3873164976959" y="1370.75" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.wctc.PlayerObjects.HealthStandard" target="edu.wctc.BehaviourObjects.PlayerHealthBehaviour" relationship="REALIZATION">
+      <point x="0.0" y="-92.0" />
+      <point x="0.0" y="55.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.3221496437054636" showDependencies="false" x="465.6034866315247" y="1239.1910880737469" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

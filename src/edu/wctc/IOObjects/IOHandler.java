@@ -6,6 +6,7 @@ public interface IOHandler {
     String getText(String prompt);
     char getChar(String prompt);
     void outputText(String text);
+    int getRandomNumber(int min, int max);
 
     static IOHandler getInstance() {
         return null;

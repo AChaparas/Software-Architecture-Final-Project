@@ -1,6 +1,7 @@
-package edu.wctc;
+package edu.wctc.GameObjects;
 
 import edu.wctc.BehaviourObjects.AttackValueBroker;
+import edu.wctc.BehaviourObjects.ScoreValueBroker;
 import edu.wctc.EnemyObjects.Enemy;
 import edu.wctc.EnemyObjects.EnemyFactory;
 import edu.wctc.IOObjects.IOHandler;
@@ -53,6 +54,8 @@ public class GameCore {
             Player playerCharacter = CharacterCreator.characterCreator(ioHandler, AttackValueBroker.getInstance());
             //This took a while to complete, but finally, you're ready to go
 
+//            System.out.println("TEST VALUE - CHARACTER CREATION COMPLETE");
+
             //Player is ready, start main gameplay
             //Gotta lock the player into the eternal do loop of Doom
             do {
@@ -67,20 +70,25 @@ public class GameCore {
 //                Enemy testEnemy = EnemyFactory.getEnemy('W', AttackValueBroker.getInstance());
 //
 //                testEnemy.enemyTakeDamage(playerCharacter.getAttackValue(), testEnemy.getHealthBehaviour());
-//
-//                if (playerCharacter.getHealth() == 0) {
-//                    System.out.println("TEST INFO - CHARACTER IS DEAD");
-//                    playerAlive = false;
-//                }
+
                 //==================================================
 
                 //Functionality is now fully implemented
                 //Finally is the Combat Loop
 
+                //New Enemy is created
+                Enemy attackingEnemy = EnemyFactory.getEnemy(ioHandler.getRandomNumber(0, 9), AttackValueBroker.getInstance(), ScoreValueBroker.getInstance());
 
-
+                //Now that we have a functional Player and Enemy, put them in the Combat Pit
+                new CombatCore().combatStart(playerCharacter, attackingEnemy, ioHandler);
 
                 //==================================================
+
+                if (playerCharacter.getHealth() == 0) {
+//                    System.out.println("TEST INFO - CHARACTER IS DEAD");
+                    playerAlive = false;
+                    ioHandler.outputText("You Have Died! Game Over!\nPlayer " + playerCharacter.getPlayerName() + " gained " + playerCharacter.getScore() + " points in glorious combat.\nTry again any time!");
+                }
 
             } while (playerAlive); //This should check if a Player object has more than Zero health.
             //If it gets past this point, you're dead

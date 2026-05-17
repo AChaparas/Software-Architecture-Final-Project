@@ -28,19 +28,34 @@ public class DamageCalculation implements DamageBehaviour {
 //                System.out.println("TEST INFO - PLAYER ARMOR DAMAGE TAKEN");
 //                System.out.println(healthBehaviour.armorValue());
 //                System.out.println("DAMAGE LEFT IS " + i);
+
                 if (healthBehaviour.armorValue() == 0) {
 
                     for (i = remainingDamage; i > 0 && healthBehaviour.healthValue() > 0; i--) {
                         healthBehaviour.healthDamage();
 
                         //Test Values
-//                        System.out.println("TEST INFO - PLAYER HEALTH DAMAGE TAKEN");
-//                        System.out.println(healthBehaviour.healthValue());
-//                        System.out.println("DAMAGE LEFT IS " + i);
+//                    System.out.println("TEST INFO - PLAYER HEALTH DAMAGE TAKEN");
+//                    System.out.println(healthBehaviour.healthValue());
+//                    System.out.println("DAMAGE LEFT IS " + i);
                     }
 
                 }
 
+            }
+
+        }
+
+        //If no armor, just skip straight to damage calc
+        if (healthBehaviour.armorValue() == 0) {
+
+            for (int i = remainingDamage; i > 0 && healthBehaviour.healthValue() > 0; i--) {
+                healthBehaviour.healthDamage();
+
+                //Test Values
+//                    System.out.println("TEST INFO - PLAYER HEALTH DAMAGE TAKEN");
+//                    System.out.println(healthBehaviour.healthValue());
+//                    System.out.println("DAMAGE LEFT IS " + i);
             }
 
         }

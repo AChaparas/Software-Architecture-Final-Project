@@ -1,7 +1,6 @@
 package edu.wctc.IOObjects;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Random;
 
 //Technically this being IOConsole leaves room for stuff like Web and Java Applet interfaces.
 //I don't know how to do that though so it's by itself.
@@ -52,6 +51,16 @@ public class IOConsole implements IOHandler {
     public char getChar(String prompt) {
 
         return console.getCharPrompt(prompt);
+
+    }
+
+    //Inclusive Random Number Generator
+    //Will generate number within given range including the min and max values
+    @Override
+    public int getRandomNumber(int min, int max) {
+
+        Random random = new Random();
+        return random.nextInt(max - min + 1) + min;
 
     }
 
